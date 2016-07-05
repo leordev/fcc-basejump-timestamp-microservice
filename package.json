@@ -1,0 +1,15 @@
+{
+  "name": "fcc-basejump-timestamp-microservice",
+  "version": "1.0.0",
+  "description": "API Basejump: Timestamp microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Leo Ribeiro",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.14.1"
+  }
+}
