@@ -2,8 +2,6 @@ var http = require('http');
 var url = require('url');
 var moment = require('moment');
 
-var port = process.env.PORT || 5000;
-
 var processTime = (req,res) => {
 
   // parse url
@@ -34,12 +32,11 @@ var processTime = (req,res) => {
 
 };
 
-var server = http.createServer((req,res) => {
+http.createServer((req,res) => {
 
   // microservice - always only process time
   // no frameworks, neither routes lib needed
   processTime(req,res);
 
-});
-server.listen(port);
-console.log('Server started on port ' + port + '...');
+}).listen(process.env.PORT || 5000);
+console.log('Server started!');
