@@ -2,7 +2,7 @@ var http = require('http');
 var url = require('url');
 var moment = require('moment');
 
-var port = process.env.BJTSMS_PORT || 3000;
+var port = process.env.PORT || 3000;
 
 var processTime = (req,res) => {
 
