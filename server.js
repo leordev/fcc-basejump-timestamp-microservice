@@ -24,10 +24,11 @@ var processTime = (req,res) => {
   var time = isNaN(timeInput) ? moment(timeInput) : moment(Number(timeInput) * 1000);
 
   // unix and natural language result
-  var result = {
-    unix: Number(time.format('X')),
-    natural: time.format('MMMM D, YYYY')
-  };
+  var result = time.isValid() ?
+    {
+      unix: Number(time.format('X')),
+      natural: time.format('MMMM D, YYYY')
+    } : { unix: null, natural: null};
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify(result));
 
